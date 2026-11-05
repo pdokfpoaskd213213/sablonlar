@@ -1,3 +1,5 @@
+export const siteName = "Şablon Atölyesi"
+
 export type Template = {
   slug: string
   title: string
@@ -9,9 +11,9 @@ export type Template = {
 export const templates: Template[] = [
   {
     slug: "plak-favs",
-    title: "Plak: My Recent Favs",
+    title: "Plak: En Sevdiklerim",
     description:
-      "Plağın üzerine en sevdiğin albümleri diz, şarkı listeni yaz, PNG olarak indir.",
+      "Albüm kapaklarını plağın üstüne diz, şarkı listeni altına yaz. 1080×1350 PNG.",
     preview: "/templates/plak-bos.jpg",
   },
 ]

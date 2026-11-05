@@ -1,34 +1,47 @@
 import Link from "next/link"
-import { templates } from "@/lib/templates"
+import { siteName, templates } from "@/lib/templates"
 
 export default function Home() {
   return (
-    <main className="mx-auto max-w-5xl px-5 py-12">
-      <header className="mb-12 text-center">
-        <h1 className="text-4xl font-bold sm:text-5xl">Photoshop'suz tasarım</h1>
-        <p className="mx-auto mt-4 max-w-xl text-neutral-600">
-          Hazır şablonu seç, yazıları, renkleri ve görselleri kendine göre
-          değiştir, tek tıkla PNG olarak indir. Üyelik yok, kurulum yok.
-        </p>
-      </header>
+    <main className="mx-auto max-w-5xl px-5 pb-24 pt-6">
+      <nav className="flex items-baseline justify-between border-b-[1.5px] border-[#111] pb-3">
+        <span className="font-pix text-xl">{siteName}</span>
+        <span className="font-mono2 text-xs uppercase tracking-wider">{templates.length} şablon</span>
+      </nav>
 
-      <h2 className="mb-5 text-xl font-semibold">Şablonlar</h2>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {templates.map((t) => (
-          <article key={t.slug} className="overflow-hidden rounded-2xl border bg-white shadow-sm">
-            <img src={t.preview} alt={t.title} className="aspect-[4/5] w-full object-cover" />
-            <div className="p-4">
-              <h3 className="font-semibold">{t.title}</h3>
-              <p className="mt-1 text-sm text-neutral-600">{t.description}</p>
-              <Link
-                href={`/sablon/${t.slug}`}
-                className="mt-4 inline-block rounded-full bg-black px-5 py-2 text-sm font-medium text-white"
-              >
-                Al, Kullan
+      <section className="py-14 sm:py-24">
+        <h1 className="font-pix text-5xl font-bold leading-[1.02] sm:text-7xl">
+          Şablonu seç.<br />Kendine göre değiştir.<br />
+          <span className="mark">PNG olarak al.</span>
+        </h1>
+        <p className="mt-7 max-w-md text-lg leading-snug">
+          Hesap yok, kurulum yok, Photoshop yok. Fotoğrafını yükle, yazını yaz,
+          indir. Yüklediklerin tarayıcından dışarı çıkmaz.
+        </p>
+      </section>
+
+      <div className="mb-5 flex items-center gap-3">
+        <h2 className="font-mono2 text-xs font-medium uppercase tracking-wider">Şablonlar</h2>
+        <div className="h-px flex-1 bg-[#111]" />
+      </div>
+
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {templates.map((t, i) => (
+          <article key={t.slug} className="card">
+            <div className="relative border-b-[1.5px] border-[#111]">
+              <img src={t.preview} alt={t.title} className="aspect-[4/5] w-full object-cover" />
+              <span className="tag">N°{String(i + 1).padStart(2, "0")}</span>
+            </div>
+            <div className="flex flex-1 flex-col gap-3 p-4">
+              <h3 className="font-pix text-xl font-bold">{t.title}</h3>
+              <p className="flex-1 text-sm leading-snug text-neutral-700">{t.description}</p>
+              <Link href={`/sablon/${t.slug}`} className="btn btn-ink self-start">
+                Al, kullan →
               </Link>
             </div>
           </article>
         ))}
+        <div className="card-empty">Yeni şablonlar<br />yolda.</div>
       </div>
     </main>
   )

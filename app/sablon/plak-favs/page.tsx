@@ -3,9 +3,14 @@ import PlakEditor from "@/components/plak-editor"
 
 export default function Page() {
   return (
-    <main className="mx-auto max-w-3xl px-4 py-8">
-      <Link href="/" className="text-sm text-neutral-500">← Anasayfa</Link>
-      <h1 className="mb-6 mt-2 text-2xl font-bold">Plak: My Recent Favs</h1>
+    <main className="mx-auto max-w-[760px] px-4 pb-24 pt-6">
+      <Link href="/" className="font-mono2 text-xs uppercase tracking-wider underline underline-offset-4">
+        ← Anasayfa
+      </Link>
+      <h1 className="font-pix mb-1 mt-4 text-4xl font-bold">Plak: En Sevdiklerim</h1>
+      <p className="mb-8 text-sm text-neutral-700">
+        Üstten alta doldur, en altta önizlemeyi sürükleyerek düzenle ve indir.
+      </p>
       <PlakEditor />
     </main>
   )
