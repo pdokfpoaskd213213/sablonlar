@@ -1,0 +1,7 @@
+Projeyi bir kere oku, tekrar tekrar okuma. Vercel yayını, vscode'dan güncelliyorum.
+Kurallar:
+Sadece istediğim değişiklikleri yap, başka şeye dokunma, "iyileştirme" yapma.
+Zip'e sadece değişen ve yeni dosyaları koy, proje köküyle aynı klasör yapısında.
+Sitede veritabanı yok, localde çalışıyor. sqllik bir şey yapma
+Tasarım sade ve tatlı kalsın, animasyonlar yumuşak ve minimal olsun. Yapay zekâ işi gibi görünmesin.
+her mesajda yaptığın değişiklikleri ekle, yani 1. mesajda yaptığın değişikliği 2. mesajda unutma. verdiğin halinin en günceli olduğunu aklında tut hep.
