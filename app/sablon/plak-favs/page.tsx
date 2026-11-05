@@ -7,7 +7,7 @@ export default function Page() {
       <Link href="/" className="font-mono2 text-xs uppercase tracking-wider underline underline-offset-4">
         ← Anasayfa
       </Link>
-      <h1 className="font-pix mb-1 mt-4 text-4xl font-bold">Plak: En Sevdiklerim</h1>
+      <h1 className="font-pix mb-1 mt-4 text-4xl font-bold">Haftalık Release</h1>
       <p className="mb-8 text-sm text-neutral-700">
         Üstten alta doldur, en altta önizlemeyi sürükleyerek düzenle ve indir.
       </p>

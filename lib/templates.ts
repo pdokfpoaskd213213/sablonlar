@@ -11,7 +11,7 @@ export type Template = {
 export const templates: Template[] = [
   {
     slug: "plak-favs",
-    title: "Plak: En Sevdiklerim",
+    title: "Haftalık Release",
     description:
       "Albüm kapaklarını plağın üstüne diz, şarkı listeni altına yaz. 1080×1350 PNG.",
     preview: "/templates/plak-bos.jpg",

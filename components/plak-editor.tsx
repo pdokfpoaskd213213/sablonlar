@@ -3,8 +3,9 @@ import { useEffect, useRef, useState } from "react"
 import { toPng } from "html-to-image"
 
 const W = 1080, H = 1350, CX = 541, CY = 967, PR = 425
-const FONTS = ["Pixelify Sans", "Silkscreen", "VT323", "Press Start 2P", "Special Elite", "Courier Prime", "Playfair Display", "Pinyon Script", "Mrs Saint Delafield", "Allura", "Caveat"]
-const FONT_URL = "https://fonts.googleapis.com/css2?" + FONTS.map((f) => "family=" + f.replace(/ /g, "+")).join("&") + "&display=swap"
+const GFONTS = ["Pixelify Sans", "Silkscreen", "VT323", "Press Start 2P", "Special Elite", "Courier Prime", "Playfair Display", "Pinyon Script", "Mrs Saint Delafield", "Allura", "Caveat"]
+const FONTS = [...GFONTS, "Cormorant Garamond", "Cormorant Garamond Italic"]
+const FONT_URL = "https://fonts.googleapis.com/css2?" + GFONTS.map((f) => "family=" + f.replace(/ /g, "+")).join("&") + "&display=swap"
 const DEF = { title: "BURAYA BAŞLIK", fTitle: "Pixelify Sans", fScript: "Pinyon Script", fList: "VT323", fSide: "Silkscreen", cTitle: "#111111", cList: "#111111", cNum: "#ffffff" }
 const KEY = "plak-favs-v2"
 const TINT = ["#c9d6e2", "#d9c9c9", "#cfd8c4", "#e0d4b8", "#cbc4de"]
@@ -235,7 +236,7 @@ export default function PlakEditor() {
                 const a2 = a + (a - 90) * 0.12
                 const q = polar(a2, 268 + 35 * Math.abs(Math.cos(rad(a2))))
                 const on = sel?.k === "s" && sel.id === x.id
-                const st: React.CSSProperties = { position: "absolute", left: p.x - size / 2, top: p.y - size / 2, width: size, height: size, transform: `rotate(${(90 - a) * 0.4}deg)`, cursor: "pointer", outline: ring(on), outlineOffset: 6 / s }
+                const st: React.CSSProperties = { position: "absolute", left: p.x - size / 2, top: p.y - size / 2, width: size, height: size, transform: `rotate(${(Math.atan2(p.x - q.x, q.y - p.y) * 180) / Math.PI}deg)`, cursor: "pointer", outline: ring(on), outlineOffset: 6 / s }
                 const pick = (e: React.PointerEvent) => { e.stopPropagation(); setSel({ k: "s", id: x.id }) }
                 return (
                   <div key={x.id}>
